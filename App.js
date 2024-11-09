@@ -10,6 +10,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import Contacto from './components/contacto'; // Asegúrate de que esto sea correcto
 import Temperatura from './components/Temperatura'; // Asegúrate de que esto sea correcto
 import { useNavigation } from '@react-navigation/native'; // Importa useNavigation
+import useShake from './components/llamado'
 
 const Stack = createNativeStackNavigator();
 
@@ -21,6 +22,8 @@ const HomeScreen = () => (
 );
 
 export default function App() {
+useShake();
+
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
