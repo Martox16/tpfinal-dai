@@ -37,7 +37,7 @@ const useShake = () => {
       const { acceleration } = motion;
 
       // Aumentar el umbral de aceleración para que se necesite un movimiento más fuerte
-      const threshold = 25;  // Aumentamos el umbral a 5 (ajusta este valor según sea necesario)
+      const threshold = 10;  // Aumentamos el umbral a 5 (ajusta este valor según sea necesario)
 
       // Configurar el umbral de sacudida (más brusco)
       if (

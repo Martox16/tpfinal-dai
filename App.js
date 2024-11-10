@@ -10,7 +10,8 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import Contacto from './components/contacto'; // Asegúrate de que esto sea correcto
 import Temperatura from './components/Temperatura'; // Asegúrate de que esto sea correcto
 import { useNavigation } from '@react-navigation/native'; // Importa useNavigation
-import useShake from './components/llamado'
+import useShake from './components/llamado';
+import AcercaDe from './components/AcercaDe'; // Importa el componente AcercaDe
 
 const Stack = createNativeStackNavigator();
 
@@ -22,7 +23,7 @@ const HomeScreen = () => (
 );
 
 export default function App() {
-useShake();
+  useShake();
 
   return (
     <NavigationContainer>
@@ -31,6 +32,7 @@ useShake();
         <Stack.Screen name="NroEmergencia" component={NroEmergencia} options={{ title: 'Emergencia' }} />
         <Stack.Screen name="Contacto" component={Contacto} options={{ title: 'Contactos' }} />
         <Stack.Screen name="Temperatura" component={Temperatura} options={{ title: 'Temperatura' }} />
+        <Stack.Screen name="AcercaDe" component={AcercaDe} options={{ title: 'Acerca de la App' }} />
       </Stack.Navigator>
       <Footer />
       <StatusBar style="auto" />
@@ -39,7 +41,7 @@ useShake();
 }
 
 const Footer = () => {
-  const navigation = useNavigation(); // Usa el hook aquí
+  const navigation = useNavigation();
   return (
     <View style={styles.footer}>
       <TouchableOpacity style={styles.navButton} onPress={() => navigation.navigate('Home')}>
@@ -57,6 +59,10 @@ const Footer = () => {
       <TouchableOpacity style={styles.navButton} onPress={() => navigation.navigate('Temperatura')}>
         <MaterialCommunityIcons name="weather-cloudy-clock" size={24} color="black" />
         <Text>Clima/Hora</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.navButton} onPress={() => navigation.navigate('AcercaDe')}>
+        <Ionicons name="information-circle" size={24} color="black" />
+        <Text>Acerca de</Text>
       </TouchableOpacity>
     </View>
   );
